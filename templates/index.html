@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <title>Stock Details</title>
+{% endblock %}
+
+{% block head %}
+    <form action="/calculate" method="POST">
+    <label for="stocks">Select at least 4 stocks:</label><br>
+    <select name="stocks" id="stocks" multiple size="5" required>
+        {% for stock in stocks %}
+            <option value="{{ stock }}">{{ stock }}</option>
+        {% endfor %}
+    </select><br><br>
+    <label for="number_stocks">Number of stocks (minimum 15 and maximum 25):</label><br>
+    <input type="number" name="number_stocks" id="number_stocks" min="15" max="25" required><br><br>
+    <label for="days_to_analyse">Days to Analyse (minimum 30 and maximum 365):</label><br>
+    <input type="number" name="days_to_analyse" id="days_to_analyse" min="30" max="365" required><br><br>
+    <input type="submit" value="Calculate details"></form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Average Closing Price</title>
+</head>
+<body>
+    <h1>Stock Average Closing Price</h1>
+    <form method="post">
+        <label for="stocks">Select at least 4 stocks:</label><br>
+        <select name="stocks" id="stocks" multiple size="5" required>
+            {% for stock in stocks %}
+            <option value="{{ stock }}">{{ stock }}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Get Average Closing Price">
+    </form>
+    {% if average_closing_price %}
+    <h2>Average Closing Price: {{ average_closing_price }}</h2>
+    {% elif error_message %}
+    <h2>{{ error_message }}</h2>
+    {% endif %}
+</body>
+</html> -->
